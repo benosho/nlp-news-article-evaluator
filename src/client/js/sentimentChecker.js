@@ -1,14 +1,25 @@
-async function getSentiment(url='', keyVal='', text='') {
-    console.log("::: Running getSentiment :::", url, key, text);
+async function getSentiment(keyVal = '', model = '', langISO = '', urlString = '') {
     // GET request to external sentiment analysis API
-    const apiResponse = await fetch(url + '?key=' + keyVal + '&of=json' + '&txt=' + text + '&lang=en');
-    try {
-        const sentimentResult = apiResponse.json();
-        return sentimentResult
+    const https = require('follow-redirects').https
+    const options = {
+        'method': 'POST',
+        'hostname': 'api.meaningcloud.com',
+        'path': '/sentiment-2.1?key=' + keyVal + '&of=json' + '&lang=' + langISO + '&url=' + urlString + '&model=' + model,
+        'headers': {},
+        'maxRedirects': 20
     }
-    catch {
-        console.log('ERR:', err.message);
-    }
+
+    const req = https.request(options, res => {
+        const chunks = []
+        res.on('data', (chunk) => chunks.push(chunk))
+        res.on("end", (chunk) => {
+            let body = Buffer.concat(chunks)
+            body = JSON.parse(body.toString())
+            Client.updateUI(body.status.code, body.score_tag, body.agreement, body.subjectivity, body.irony, body.confidence, model, langISO, urlString)
+        })
+        res.on("error", error => console.error(error));
+    })
+    req.end()
 }
 
 export { getSentiment }

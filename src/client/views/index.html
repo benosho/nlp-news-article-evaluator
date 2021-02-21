@@ -3,43 +3,39 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Test</title>
-    <link rel="stylesheet" href="/styles/resets.css">
-    <link rel="stylesheet" href="/styles/base.css">
-    <link rel="stylesheet" href="/styles/header.css">
-    <link rel="stylesheet" href="/styles/form.css">
-    <link rel="stylesheet" href="/styles/footer.css">
+    <title>NLP News Article Evaluator</title>
 </head>
 
 <body>
 
     <header>
-        <div class="">
+        <div class="logo">
             Logo
         </div>
-        <div class="">
-            navigation
+        <div class="nav">
+            Navigation
         </div>
     </header>
-
+    <h1>NLP News Article Evaluator</h1>
     <main>
-        <section>
-            <form class="" method="POST"  "https://api.meaningcloud.com/sentiment-2.1" onsubmit="return handleSubmit(event)">
-                <textarea id="text-input" name="text-input" rows="4" cols="50" onblur="onBlur()"
-                    placeholder="Enter your news article here"></textarea>
-                <input type="submit" name="" value="Analyse Text" onclick="return handleSubmit(event)"
-                    onsubmit="return handleSubmit(event)">
+        <section class="api-request">
+            <form id="request-form" onsubmit="return Client.handleSubmit(event)">
+                <input type="text" id="text-input" name="text-input" placeholder="Enter the URL of your article"
+                    aria-describedby="entry-description">
+                <span id="entry-description">*Only non-authenticated HTTP and FTP are supported</span>
+                <input type="submit" name="anlayse-content" value="Analyse Content"
+                    onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
             </form>
         </section>
 
-        <section>
-            <strong>Sentiment Analysis Result:</strong>
+        <section class="api-response">
+            <h2>Sentiment Analysis Results:</h2>
             <div id="results"></div>
         </section>
     </main>
 
     <footer>
-        <p>This is a footer</p>
+        <p>Footer</p>
     </footer>
 
 </body>

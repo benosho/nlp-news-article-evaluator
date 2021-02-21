@@ -1,24 +1,18 @@
-function handleSubmit(event) {
+const handleSubmit = (event) => {
     event.preventDefault()
 
-    const baseURL = 
+    const model = 'general'
+    const langISO = 'en'
 
-    // check what text was put into the form field
-    const textForAnalysis = document.getElementById('text-input').value
-    if (textForAnalysis) {
-getSentiment()
+    // Analyse text
+    const textInput = document.getElementById('text-input').value
+    if (textInput && /^(https?|ftp):\/\/[^" ]+$/.test(textInput)) { // check for valid url
+        Client.getSentiment(process.env.API_KEY, model, langISO, textInput)
     }
     else {
-        alert('Please enter some text')
+        alert('Please enter a valid URL')
     }
-    checkForName(formText)
-
-    console.log("::: Form Submitted :::")
-    fetch('http://localhost:8080/test')
-    .then(res => res.json())
-    .then(function(res) {
-        document.getElementById('results').innerHTML = res.message
-    })
 }
 
 export { handleSubmit }
+
