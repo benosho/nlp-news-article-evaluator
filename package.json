@@ -1,5 +1,5 @@
 {
-  "name": "example-project",
+  "name": "nlp-news-article-evaluator",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -9,7 +9,7 @@
     "build-dev": "webpack-dev-server  --config webpack.dev.js --open"
   },
   "keywords": [],
-  "author": "",
+  "author": "Gbenga Oso",
   "license": "ISC",
   "description": "",
   "dependencies": {
@@ -35,5 +35,8 @@
     "terser-webpack-plugin": "^4.2.3",
     "webpack-dev-server": "^3.7.2",
     "workbox-webpack-plugin": "^6.1.1"
+  },
+  "engines": {
+    "node": "14.15.5"
   }
 }
