@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>NLP News Article Evaluator</title>
+<link href="main.css" rel="stylesheet"></head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            Logo
+        </div>
+        <div class="nav">
+            Navigation
+        </div>
+    </header>
+    <h1>NLP News Article Evaluator</h1>
+    <main>
+        <section class="api-request">
+            <form onsubmit="return Client.handleSubmit(event)">
+                <input type="text" id="text-input" name="text-input" placeholder="Enter the URL of your article"
+                    aria-describedby="entry-description">
+                <span id="entry-description">*Only non-authenticated HTTP and FTP are supported</span>
+                <input type="submit" name="anlayse-content" value="Analyse Content"
+                    onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
+            </form>
+        </section>
+
+        <section class="api-response">
+            <h2>Sentiment Analysis Results:</h2>
+            <div id="results"></div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="sub-footer">
+            <h4>About</h4>
+            <p>The NLP News Article Evaluator App uses the Sentiment Analysis API by MeaningCloud LLC. The App
+                is created as a requirement on the Udacity Front End Web Developer Nanodegree program.</p>
+        </div>
+        <div class="sub-footer">
+            <h4>Links</h4>
+            <p><a href="#" target="_blank">GitHub Repository for this project</a></p>
+            <p><a href="https://www.meaningcloud.com/developer/sentiment-analysis" target="_blank">MeaningCloud
+                    Sentiment Analysis
+                    API</a></p>
+            <p><a href="https://www.udacity.com/course/front-end-web-developer-nanodegree--nd0011"
+                    target="_blank">Udacity Front End Web Developer Nanodegree program</a></p>
+        </div>
+        <div class="sub-footer notice">
+            <p class="built-with">Built with <a href="https://expressjs.com/" target="_blank">Express Node.js</a> and <a href="https://webpack.js.org/" target="_blank">Webpack</a></p>
+            <p class="copyright">2021 &copy; Gbenga Oso. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        // Check that service workers are supported
+        if ('serviceWorker' in navigator) {
+            // Use the window load event to keep the page load performant
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js');
+            });
+        }
+       </script>
+<script type="text/javascript" src="main.js"></script></body>
+
+</html>
