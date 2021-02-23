@@ -1,3 +1,4 @@
+// Score tag lookup table
 const scoreTagLookup = {
     'P+': 'Strong Positive',
     'P': 'Positive',
@@ -7,7 +8,8 @@ const scoreTagLookup = {
     'NONE': 'Without Sentiment'
 }
 
-function formatScore(scoreTag) {
+// Convert score tag response from API into more meaningful output
+const formatScore = scoreTag => {
     const entries = Object.entries(scoreTagLookup)
     for (const [tag, term] of entries) {
         if (tag === scoreTag) {

@@ -8,7 +8,16 @@
     "build-prod": "webpack --config webpack.prod.js",
     "build-dev": "webpack-dev-server  --config webpack.dev.js --open"
   },
-  "keywords": [],
+  "keywords": [
+    "express node.js",
+    "webpack",
+    "NLP",
+    "sentiment analysis",
+    "front end web developer nanodegree",
+    "Udacity",
+    "MeaningCloud",
+    "Heroku"
+  ],
   "author": "Gbenga Oso",
   "license": "ISC",
   "description": "",
