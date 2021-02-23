@@ -1,7 +1,30 @@
 footer {
-    border-top: 1px solid #f5f5f5;
-    color: #ddd;
-    text-align: center;
-    padding-bottom: 2em;
-    padding-top: 2em;
+    background-color: #f5f5f5;
+    border-top: 1px solid #ddd;
+    padding: 2em 20px;
+    display: flex;
+    justify-content: center;
+
+    h4 {
+        font-size: 1.2em;
+        margin-bottom: 1em;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    .sub-footer {
+        width: 33%;
+        padding: 1em 20px
+    }
+
+    .sub-footer.notice {
+        align-self: center;
+    }
+
+    .sub-footer .copyright {
+        font-size: 12px;
+        padding-top: 0.5em;
+    }
 }

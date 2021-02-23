@@ -1,25 +1,9 @@
-const scoreTagTable = {
-    'P+': 'Strong Positive',
-    'P': 'Positive',
-    'NEU': 'Neutral',
-    'N': 'Negative',
-    'N+': 'Strong Negative',
-    'NONE': 'Without Sentiment'
-}
-
 const updateUI = (status, scoreTag, agreement, subjectivity, irony, confidence, model, langISO, urlString) => {
     if (parseInt(status, 10) === 0) {
-        const entries = Object.entries(scoreTagTable)
-        for (const [tag, term] of entries) {
-            if (tag === scoreTag) {
-                scoreTag = `${term} (${tag})`
-                scoreTag = scoreTag.toUpperCase()
-            }
-        }
 
         document.getElementById('results').innerHTML =
-        `<p>URL: <span class="content-url"><a href="${urlString}" target="_blank">${urlString}</a></span></p>
-        <p>Sentiment: <span class="score-tag">${scoreTag}</span></p>
+            `<p>URL: <span class="content-url"><a href="${urlString}" target="_blank">${urlString}</a></span></p>
+        <p>Sentiment: <span class="sentiment-score">${Client.formatScore(scoreTag)}</span></p>
         <p>Agreement: <span class="agreement">${agreement}</span></p>
         <p>Subjectivity: <span class="subjectivity">${subjectivity}</span></p>
         <p>Irony: <span class="irony">${irony}</span></p>

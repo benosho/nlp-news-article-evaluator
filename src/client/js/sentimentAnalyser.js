@@ -2,8 +2,12 @@
  * Two functions for calling the MeaningCloud sentiment analysis API are specified below. Use either.
  */
 
+import "regenerator-runtime/runtime.js";
+
+
 // POST request to sentiment analysis API using standard HTTP without async/await
 // See developer tools @https://www.meaningcloud.com/developer/sentiment-analysis/dev-tools/2.1#snippets-nodejs
+
 const getSentimentByHTTP = (keyVal = '', model = '', langISO = '', urlString = '') => {
     const https = require('follow-redirects').https
     const options = {
@@ -28,7 +32,6 @@ const getSentimentByHTTP = (keyVal = '', model = '', langISO = '', urlString = '
 }
 
 // POST request to sentiment analysis API using Fetch with async/await
-const fetch = require('node-fetch')
 const getSentimentByFetch = async (keyVal = '', model = '', langISO = '', urlString = '') => {
     const options = {
         method: 'POST',

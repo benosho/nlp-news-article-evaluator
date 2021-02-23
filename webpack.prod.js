@@ -6,12 +6,13 @@ const sass = require('sass')
 const MiniCSSExtractPlugin = require ('mini-css-extract-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
+const WorkboxPlugin = require('workbox-webpack-plugin');
 
 module.exports = {
     entry: './src/client/index.js',
     output: {
         libraryTarget: 'var',
-        library: 'Client'
+        library: 'Client',
     },
     mode: 'production',
     module: {
@@ -35,7 +36,8 @@ module.exports = {
         }),
         new MiniCSSExtractPlugin({
             filename: '[name].css'
-        })
+        }),
+        new WorkboxPlugin.GenerateSW()
     ],
     optimization: {
         minimizer: [

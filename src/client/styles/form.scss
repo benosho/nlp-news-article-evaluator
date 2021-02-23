@@ -2,21 +2,20 @@ form {
     border: 1px solid #545454;
     border-radius: 3px;
     padding: 40px;
-}
 
-input {
-    padding: 5px 20px;
-    height: 40px;
-    width: 100%;
-    font-size: 16px;
-    line-height: 16px;
-    margin: 10px 0;
-}
-
-#entry-description {
-    color: #666;
-    display: block;
-    font-size: 14px;
-    font-style: italic;
-    padding: 0 20px 10px;
+    input {
+        padding: 5px 20px;
+        height: 40px;
+        width: 100%;
+        font-size: 16px;
+        line-height: 16px;
+        margin: 10px 0;
+    }
+    #entry-description {
+        color: #666;
+        display: block;
+        font-size: 14px;
+        font-style: italic;
+        padding: 0 20px 10px;
+    }
 }

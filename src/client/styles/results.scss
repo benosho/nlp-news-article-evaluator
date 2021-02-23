@@ -1,18 +1,19 @@
-.analysis-meta {
-	font-weight: 700;
-	margin-top: 1em;
-}
-
-.error-notify {
-	color: #f00;
-	font-style: italic;
-}
-
-.lang,
-.model {
-	text-transform: capitalize;
-}
-
 #results {
     min-height: 100px;
+
+	.analysis-meta {
+		font-weight: 700;
+		margin-top: 1em;
+	}
+
+	.error-notify {
+		color: #f00;
+		font-style: italic;
+	}
+
+	.lang,
+	.model {
+		text-transform: capitalize;
+	}
 }
+
