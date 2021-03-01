@@ -1,5 +1,5 @@
 # NLP News Article Evaluator App
-An Express Node.js app that uses natural language processing to extract sentiments from blogs and articles.The app use the [MeaningCloud Sentiment Analysis API](https://www.meaningcloud.com/developer/sentiment-analysis). It takes in the URL of the content to be analysed and estimates indicators of sentiment such as polarity, agreement, subjectivity and irony. If the API request is successful, the result is displayed on the frontend of the app. For a live demonstration of the app go to https://ngw-sentiment-analysis-app.herokuapp.com/
+An Express Node.js app that uses natural language processing to extract sentiments from blogs and articles. The app uses the [MeaningCloud Sentiment Analysis API](https://www.meaningcloud.com/developer/sentiment-analysis). It takes in the URL of the content to be analysed and estimates indicators of sentiment such as polarity, agreement, subjectivity and irony. If the API request is successful, the result is displayed on the frontend of the app. For a live demonstration of the app go to https://ngw-sentiment-analysis-app.herokuapp.com/
 
 ## Features
 - Captures valid user input in the form of a URL
